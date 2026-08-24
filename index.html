@@ -1,0 +1,782 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <link
+      href="https://cdn.datatables.net/v/dt/dt-3.0.2/datatables.min.css"
+      rel="stylesheet"
+      integrity="sha384-mr0ObFSzaij8F1fFA3BsXCL998+r9tYwkJmx/gydwbT8Mq8EeJwBlqWm5uFUrFbu"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.datatables.net/v/dt/dt-3.0.2/datatables.min.js"
+      integrity="sha384-S27Gmq+yiALyXvt4WgoOs+8UonZ/LMOqnCNC6xSj1vGgbHxMvcgkFYUHvkSfW5fo"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.datatables.net/responsive/4.0.2/css/responsive.dataTables.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.datatables.net/responsive/4.0.2/js/dataTables.responsive.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Ghost reading list</title>
+  </head>
+  <body>
+    <h1>Ghost reading list!</h1>
+    <p>This is still a WIP! Minor appearances are not listed yet.</p>
+    <p>Recommended rating ranges from no stars to ⭐⭐.</p>
+    <table id="example" class="display">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Recommended?</th>
+          <th>Comments</th>
+          <th>Tags</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Iron Man Vol 1 #219</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man Vol 1 #220</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man Vol 1 #221</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Amazing Spider-Man Vol 1 Annual 25 (1st story)</td>
+          <td>-</td>
+          <td>1st fight against Spider-Man</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Spectacular Spider-Man Annual Vol 1 11 (1st story)</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man Vol 3 42</td>
+          <td>-</td>
+          <td>Not on-page</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man Vol 3 43</td>
+          <td>-</td>
+          <td>Not on-page</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man Vol 3 44</td>
+          <td>-</td>
+          <td>Not on-page</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man Vol 3 45</td>
+          <td>⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man: Inevitable 1</td>
+          <td>⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man: Inevitable 2</td>
+          <td>⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man: Inevitable 3</td>
+          <td>⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man: Inevitable 4</td>
+          <td>⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man: Inevitable 5</td>
+          <td>⭐</td>
+          <td>Does not appear, part of story arc</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man: Inevitable 6</td>
+          <td>⭐</td>
+          <td>Does not appear, part of story arc</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Dark Avengers Vol 1 1</td>
+          <td>-</td>
+          <td>New design, 1st meeting with Moonstone</td>
+          <td>Small part|</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 128</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 129</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 130</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Deadpool Vol 3 9</td>
+          <td>-</td>
+          <td>Other Deadpool issues can be ignored</td>
+          <td>Part of story arc</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 131</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 132</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 133</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 134</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 135</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Captain America: Reborn Vol 1 3</td>
+          <td>-</td>
+          <td>first meeting with Bucky</td>
+          <td>Small part</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 136</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 137</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 138</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 139</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 140</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Captain America Vol 5 606</td>
+          <td>-</td>
+          <td>first meeting with Zemo</td>
+          <td>Small part</td>
+        </tr>
+        <tr>
+          <td>Invincible Iron Man Vol 2 20</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Invincible Iron Man Vol 2 21</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Invincible Iron Man Vol 2 22</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Invincible Iron Man Vol 2 23</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Invincible Iron Man Vol 2 24</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Spider-Woman Vol 4 6</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part|</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 141</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 142</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 143</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Enter the Heroic Age Vol 1 1 (5th story)</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 144</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 145</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 146</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Avengers Academy Vol 1 3</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts 147</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 148</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 149</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 150</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 151</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 152</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 153</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 154</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 155</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 156</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 157</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 158</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 159</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 160</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 161</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 162</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 163</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 164</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 165</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 166</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 167</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 168</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 169</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 170</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 171</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 172</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 173</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Thunderbolts 174</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Dark Avengers Vol 1 175</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Dark Avengers Vol 1 176</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Dark Avengers Vol 1 177</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Dark Avengers Vol 1 178</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Dark Avengers Vol 1 179</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Dark Avengers Vol 1 180</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Dark Avengers Vol 1 181</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Dark Avengers Vol 1 182</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td>Dark Avengers Vol 1 183</td>
+          <td>⭐⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Avengers: Cutting Edge Vol 1 1</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Amazing Spider-Man Vol 3 16 (1st story)</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part</td>
+        </tr>
+        <tr>
+          <td>Amazing Spider-Man Vol 3 17 (1st story)</td>
+          <td>⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Amazing Spider-Man Vol 3 18 (1st story)</td>
+          <td>⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Amazing Spider-Man Vol 4 12</td>
+          <td>-</td>
+          <td>Main villain</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Invincible Iron Man Vol 3 11</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part</td>
+        </tr>
+        <tr>
+          <td>Thunderbolts Vol 4 12</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part</td>
+        </tr>
+        <tr>
+          <td>Punisher Vol 11 226</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part|</td>
+        </tr>
+        <tr>
+          <td>Punisher Vol 11 228</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part|</td>
+        </tr>
+        <tr>
+          <td>Punisher Vol 12 13</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part|</td>
+        </tr>
+
+        <tr>
+          <td>Punisher Vol 12 14</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part|</td>
+        </tr>
+
+        <tr>
+          <td>Punisher Vol 12 15</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part|</td>
+        </tr>
+        <tr>
+          <td>Punisher Vol 12 16</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Strikeforce Vol 1 5</td>
+          <td>⭐</td>
+          <td>Main villain</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Strikeforce Vol 1 6</td>
+          <td>⭐</td>
+          <td>Main villain</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Avengers Unlimited Infinity Comic Vol 1 1</td>
+          <td>⭐</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Avengers Unlimited Infinity Comic Vol 1 4</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Small part</td>
+        </tr>
+        <tr>
+          <td>Venom: Separation Anxiety Vol 2 3</td>
+          <td>⭐</td>
+          <td>Set pre-Thunderbolts</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Iron Man Vol 7 6</td>
+          <td>⭐</td>
+          <td>Main villain</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Title</th>
+          <th>Recommended?</th>
+          <th>Comments</th>
+          <th>Tags</th>
+        </tr>
+      </tfoot>
+    </table>
+    <footer>
+      <p>
+        Ghost belongs to Marvel Comics. For any questions or feedback, please
+        message me @gxixiz on Tumblr.
+      </p>
+    </footer>
+    <script>
+      const table = new DataTable("#example", {
+        columnDefs: [
+          {
+            render: (data, type, row) => {
+              const tags = data.split("|");
+              const listItems = tags
+                .map(function (element) {
+                  return "<li class='tag'>" + element + "</li>";
+                })
+                .join("");
+              return `<ul class='tags'>${listItems}</ul>`;
+            },
+            targets: 3,
+          },
+        ],
+        responsive: true,
+        paging: false,
+      });
+      table.ready(() => {
+        table.columns().every(function () {
+          let column = this;
+
+          // Create select element
+          let select = document.createElement("select");
+          select.add(new Option(""));
+          column.footer().replaceChildren(select);
+
+          // Apply listener for user change in value
+          select.addEventListener("change", function () {
+            column.search(select.value, { exact: true }).draw();
+          });
+
+          // Add list of options
+          column
+            .data()
+            .unique()
+            .sort()
+            .each(function (d, j) {
+              select.add(new Option(d));
+            });
+        });
+
+        // create select for tag column
+        const tagSelectItem = table.columns().footer()[3].firstChild;
+        const data = table.columns(3).data().unique()[0];
+        const reduced = [];
+        data.forEach((item) => {
+          const splitTags = item.split("|");
+          splitTags.forEach((tag) => {
+            if (!reduced.includes(tag)) {
+              reduced.push(tag);
+            }
+          });
+        });
+
+        tagSelectItem.options.length = 0;
+        tagSelectItem.addEventListener("change", function () {
+          column.search(select.value, { exact: false }).draw();
+        });
+        tagSelectItem.add(new Option(""));
+        reduced.forEach((item) => {
+          tagSelectItem.add(new Option(item));
+        });
+
+        // Set dark-mode/light-mode
+        let prefers = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        let html = document.querySelector("html");
+
+        html.classList.add(prefers);
+      });
+    </script>
+  </body>
+</html>
