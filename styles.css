@@ -372,7 +372,11 @@ body {
 
 table.dataTable > tbody > tr > th,
 table.dataTable > tbody > tr > td {
-  padding: 0;
+  padding: 0 1em;
+}
+
+tfoot {
+  display: table-header-group;
 }
 
 .tags {

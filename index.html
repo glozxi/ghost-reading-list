@@ -36,6 +36,15 @@
           <th>Tags</th>
         </tr>
       </thead>
+
+      <tfoot>
+        <tr>
+          <th>Title</th>
+          <th>Recommended?</th>
+          <th>Comments</th>
+          <th>Tags</th>
+        </tr>
+      </tfoot>
       <tbody>
         <tr>
           <td>Iron Man Vol 1 #219</td>
@@ -131,7 +140,7 @@
           <td>Dark Avengers Vol 1 1</td>
           <td>-</td>
           <td>New design, 1st meeting with Moonstone</td>
-          <td>Small part|</td>
+          <td>Small part</td>
         </tr>
         <tr>
           <td>Thunderbolts 128</td>
@@ -263,7 +272,7 @@
           <td>Spider-Woman Vol 4 6</td>
           <td>-</td>
           <td>-</td>
-          <td>Small part|</td>
+          <td>Small part</td>
         </tr>
         <tr>
           <td>Thunderbolts 141</td>
@@ -618,33 +627,33 @@
           <td>Punisher Vol 11 226</td>
           <td>-</td>
           <td>-</td>
-          <td>Small part|</td>
+          <td>Small part</td>
         </tr>
         <tr>
           <td>Punisher Vol 11 228</td>
           <td>-</td>
           <td>-</td>
-          <td>Small part|</td>
+          <td>Small part</td>
         </tr>
         <tr>
           <td>Punisher Vol 12 13</td>
           <td>-</td>
           <td>-</td>
-          <td>Small part|</td>
+          <td>Small part</td>
         </tr>
 
         <tr>
           <td>Punisher Vol 12 14</td>
           <td>-</td>
           <td>-</td>
-          <td>Small part|</td>
+          <td>Small part</td>
         </tr>
 
         <tr>
           <td>Punisher Vol 12 15</td>
           <td>-</td>
           <td>-</td>
-          <td>Small part|</td>
+          <td>Small part</td>
         </tr>
         <tr>
           <td>Punisher Vol 12 16</td>
@@ -689,14 +698,6 @@
           <td>-</td>
         </tr>
       </tbody>
-      <tfoot>
-        <tr>
-          <th>Title</th>
-          <th>Recommended?</th>
-          <th>Comments</th>
-          <th>Tags</th>
-        </tr>
-      </tfoot>
     </table>
     <footer>
       <p>
@@ -705,6 +706,21 @@
       </p>
     </footer>
     <script>
+      function multiSearch(select, column) {
+        const selectedValues = [...select.selectedOptions].map(
+          (option) => option.value,
+        );
+
+        if (selectedValues.length === 0) {
+          column.search("").draw();
+          return;
+        }
+        column
+          .search((d) => {
+            return selectedValues.includes(d);
+          })
+          .draw();
+      }
       const table = new DataTable("#example", {
         columnDefs: [
           {
@@ -729,13 +745,12 @@
 
           // Create select element
           let select = document.createElement("select");
+          select.setAttribute("multiple", "true");
           select.add(new Option(""));
           column.footer().replaceChildren(select);
 
           // Apply listener for user change in value
-          select.addEventListener("change", function () {
-            column.search(select.value, { exact: true }).draw();
-          });
+          select.addEventListener("change", () => multiSearch(select, column));
 
           // Add list of options
           column
@@ -749,6 +764,7 @@
 
         // create select for tag column
         const tagSelectItem = table.columns().footer()[3].firstChild;
+        const column = table.columns(3);
         const data = table.columns(3).data().unique()[0];
         const reduced = [];
         data.forEach((item) => {
@@ -761,9 +777,9 @@
         });
 
         tagSelectItem.options.length = 0;
-        tagSelectItem.addEventListener("change", function () {
-          column.search(select.value, { exact: false }).draw();
-        });
+        tagSelectItem.addEventListener("change", () =>
+          multiSearch(tagSelectItem, column),
+        );
         tagSelectItem.add(new Option(""));
         reduced.forEach((item) => {
           tagSelectItem.add(new Option(item));
