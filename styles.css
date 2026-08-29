@@ -370,6 +370,11 @@ body {
   }
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 table.dataTable > tbody > tr > th,
 table.dataTable > tbody > tr > td {
   padding: 0 1em;
@@ -385,14 +390,24 @@ tfoot {
   margin: 0.3em;
 }
 
-.tag {
+li {
   list-style-type: none;
+  display: inline;
+}
+
+.tag-search-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em;
+}
+
+.tag {
   background-color: aquamarine;
   text-decoration: none;
-  display: inline;
   border-radius: 15px;
   background-color: #73ad21;
   padding: 0.4em;
+  white-space: nowrap;
 }
 
 footer {
