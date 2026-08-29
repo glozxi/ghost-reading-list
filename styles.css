@@ -350,6 +350,10 @@ template {
   display: none;
 }
 
+:root {
+  --primary-bg-color: white;
+}
+
 body {
   padding: 1em;
   font-family:
@@ -380,8 +384,13 @@ table.dataTable > tbody > tr > td {
   padding: 0 1em;
 }
 
-tfoot {
-  display: table-header-group;
+input {
+  border: var(--dt-input_border);
+  border-radius: var(--dt-input_border-radius);
+  padding: var(--dt-input_padding);
+  background-color: var(--dt-input_background);
+  color: var(--dt-input_color);
+  margin-left: 3px;
 }
 
 .tags {
@@ -408,6 +417,14 @@ li {
   background-color: #73ad21;
   padding: 0.4em;
   white-space: nowrap;
+}
+
+.dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  background-color: var(--primary-bg-color);
 }
 
 footer {

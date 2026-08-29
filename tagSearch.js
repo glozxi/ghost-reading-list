@@ -1,7 +1,23 @@
 import { Tag } from "./tag.js";
+import data from "./data.js";
 
 class TagSearch {
   searchedTags = [];
+  allTags;
+
+  constructor() {
+    const allTags = new Set();
+    function getUniqueTags() {
+      data.forEach((item) => {
+        item.tags.forEach((t) => {
+          if (!allTags.has(t)) {
+            allTags.add(t);
+          }
+        });
+      });
+    }
+    this.allTags = getUniqueTags();
+  }
 
   removeSearchedTag(tag) {
     this.searchedTags = this.searchedTags.filter((t) => t !== tag);
@@ -37,7 +53,15 @@ class TagSearch {
   handleSubmit(e, value) {
     e.preventDefault();
 
+    if (value === "") {
+      return;
+    }
     this.addSearchedTag(value);
+    this.refreshDisplayedSearchedTags();
+  }
+
+  handleRemoveLast() {
+    this.searchedTags.pop();
     this.refreshDisplayedSearchedTags();
   }
 }

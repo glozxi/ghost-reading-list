@@ -1,26 +1,11 @@
 import { TagSearch } from "./tagSearch.js";
 import { Tag } from "./tag.js";
+import data from "./data.js";
 
 const tagSearch = new TagSearch();
 
-function multiSearch(select, column) {
-  const selectedValues = [...select.selectedOptions].map(
-    (option) => option.value,
-  );
-
-  if (selectedValues.length === 0) {
-    column.search("").draw();
-    return;
-  }
-  column
-    .search((d) => {
-      return selectedValues.includes(d);
-    })
-    .draw();
-}
-
 const table = new DataTable("#example", {
-  ajax: "data.json",
+  data: data,
   columns: [
     { data: "title" },
     { data: "recommended" },
@@ -45,33 +30,35 @@ const table = new DataTable("#example", {
   responsive: true,
   paging: false,
 });
+
+function getDataFilteredByTags() {
+  if (tagSearch.length === 0) {
+    return;
+  }
+  const filteredData = data.filter((row) => {
+    return tagSearch.searchedTags.every((t) => row.tags.includes(t));
+  });
+  return filteredData;
+}
+
+function reloadData(table, data) {
+  table.clear();
+  table.rows.add(data).draw();
+}
+
 table.ready(() => {
   const tagSearchForm = document.getElementById("tag-search-form");
   tagSearchForm.addEventListener("submit", (e) => {
     const value = document.getElementById("tag-search-input").value;
     tagSearch.handleSubmit(e, value);
     tagSearchForm.reset();
+    reloadData(table, getDataFilteredByTags());
   });
-
-  table.columns().every(function () {
-    let column = this;
-
-    // Create select element
-    let select = document.createElement("select");
-    select.setAttribute("multiple", "true");
-    select.add(new Option(""));
-
-    // Apply listener for user change in value
-    select.addEventListener("change", () => multiSearch(select, column));
-
-    // Add list of options
-    column
-      .data()
-      .unique()
-      .sort()
-      .each(function (d, j) {
-        select.add(new Option(d));
-      });
+  tagSearchForm.addEventListener("keyup", (e) => {
+    if (e.key === "Backspace") {
+      tagSearch.handleRemoveLast();
+      reloadData(table, getDataFilteredByTags());
+    }
   });
 
   // Set dark-mode/light-mode

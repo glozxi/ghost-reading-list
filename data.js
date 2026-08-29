@@ -1,0 +1,655 @@
+const data = [
+  {
+    title: "Iron Man Vol 1 #219",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Iron Man Vol 1 #220",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Iron Man Vol 1 #221",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Amazing Spider-Man Vol 1 Annual 25 (1st story)",
+    recommended: "",
+    comments: "1st fight against Spider-Man",
+    tags: [],
+  },
+  {
+    title: "Spectacular Spider-Man Annual Vol 1 11 (1st story)",
+    recommended: "",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Iron Man Vol 3 42",
+    recommended: "",
+    comments: "Not on-page",
+    tags: [],
+  },
+  {
+    title: "Iron Man Vol 3 43",
+    recommended: "",
+    comments: "Not on-page",
+    tags: [],
+  },
+  {
+    title: "Iron Man Vol 3 44",
+    recommended: "",
+    comments: "Not on-page",
+    tags: [],
+  },
+  {
+    title: "Iron Man Vol 3 45",
+    recommended: "⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Iron Man: Inevitable 1",
+    recommended: "⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Iron Man: Inevitable 2",
+    recommended: "⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Iron Man: Inevitable 3",
+    recommended: "⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Iron Man: Inevitable 4",
+    recommended: "⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Iron Man: Inevitable 5",
+    recommended: "⭐",
+    comments: "Does not appear, part of story arc",
+    tags: [],
+  },
+  {
+    title: "Iron Man: Inevitable 6",
+    recommended: "⭐",
+    comments: "Does not appear, part of story arc",
+    tags: [],
+  },
+  {
+    title: "Dark Avengers Vol 1 1",
+    recommended: "",
+    comments: "New design, 1st meeting with Moonstone",
+    tags: ["Small part"],
+  },
+  {
+    title: "Thunderbolts 128",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 129",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 130",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Deadpool Vol 3 9",
+    recommended: "",
+    comments: "Other Deadpool issues can be ignored",
+    tags: ["Part of story arc"],
+  },
+  {
+    title: "Thunderbolts 131",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 132",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 133",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 134",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 135",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Captain America: Reborn Vol 1 3",
+    recommended: "",
+    comments: "first meeting with Bucky",
+    tags: ["Small part"],
+  },
+  {
+    title: "Thunderbolts 136",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 137",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 138",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 139",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 140",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Captain America Vol 5 606",
+    recommended: "",
+    comments: "first meeting with Zemo",
+    tags: ["Small part"],
+  },
+  {
+    title: "Invincible Iron Man Vol 2 20",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Invincible Iron Man Vol 2 21",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Invincible Iron Man Vol 2 22",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Invincible Iron Man Vol 2 23",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Invincible Iron Man Vol 2 24",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Spider-Woman Vol 4 6",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+  {
+    title: "Thunderbolts 141",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 142",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 143",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Enter the Heroic Age Vol 1 1 (5th story)",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+
+  {
+    title: "Thunderbolts 144",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 145",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Thunderbolts 146",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Avengers Academy Vol 1 3",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+  {
+    title: "Thunderbolts 147",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 148",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 149",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 150",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 151",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 152",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 153",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 154",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 155",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 156",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 157",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 158",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 159",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 160",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 161",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 162",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 163",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 164",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 165",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 166",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 167",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 168",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 169",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 170",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 171",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 172",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 173",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Thunderbolts 174",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Dark Avengers Vol 1 175",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Dark Avengers Vol 1 176",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Dark Avengers Vol 1 177",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Dark Avengers Vol 1 178",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Dark Avengers Vol 1 179",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Dark Avengers Vol 1 180",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Dark Avengers Vol 1 181",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Dark Avengers Vol 1 182",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+
+  {
+    title: "Dark Avengers Vol 1 183",
+    recommended: "⭐⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Avengers: Cutting Edge Vol 1 1",
+    recommended: "",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Amazing Spider-Man Vol 3 16 (1st story)",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+  {
+    title: "Amazing Spider-Man Vol 3 17 (1st story)",
+    recommended: "⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Amazing Spider-Man Vol 3 18 (1st story)",
+    recommended: "⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Amazing Spider-Man Vol 4 12",
+    recommended: "",
+    comments: "Main villain",
+    tags: [],
+  },
+  {
+    title: "Invincible Iron Man Vol 3 11",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+  {
+    title: "Thunderbolts Vol 4 12",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+  {
+    title: "Punisher Vol 11 226",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+  {
+    title: "Punisher Vol 11 228",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+  {
+    title: "Punisher Vol 12 13",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+
+  {
+    title: "Punisher Vol 12 14",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+
+  {
+    title: "Punisher Vol 12 15",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+  {
+    title: "Punisher Vol 12 16",
+    recommended: "",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Strikeforce Vol 1 5",
+    recommended: "⭐",
+    comments: "Main villain",
+    tags: [],
+  },
+  {
+    title: "Strikeforce Vol 1 6",
+    recommended: "⭐",
+    comments: "Main villain",
+    tags: [],
+  },
+  {
+    title: "Avengers Unlimited Infinity Comic Vol 1 1",
+    recommended: "⭐",
+    comments: "",
+    tags: [],
+  },
+  {
+    title: "Avengers Unlimited Infinity Comic Vol 1 4",
+    recommended: "",
+    comments: "",
+    tags: ["Small part"],
+  },
+  {
+    title: "Venom: Separation Anxiety Vol 2 3",
+    recommended: "⭐",
+    comments: "Set pre-Thunderbolts",
+    tags: [],
+  },
+  {
+    title: "Iron Man Vol 7 6",
+    recommended: "⭐",
+    comments: "Main villain",
+    tags: [],
+  },
+];
+
+export default data;
