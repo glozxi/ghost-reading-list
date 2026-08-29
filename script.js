@@ -11,7 +11,7 @@ const table = new DataTable("#example", {
     { data: "comments" },
     {
       data: "tags",
-      render: (data, type, row) => {
+      render: (data) => {
         const listItems = data.map(function (element) {
           const tag = new Tag(element);
           return tag.createTagLi();
@@ -26,8 +26,13 @@ const table = new DataTable("#example", {
     },
   ],
   order: [],
-  responsive: true,
+  responsive: {
+    details: {
+      renderer: DataTable.Responsive.renderer.listHiddenNodes(),
+    },
+  },
   paging: false,
+  searching: false,
 });
 
 table.ready(() => {

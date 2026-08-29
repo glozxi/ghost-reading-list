@@ -425,6 +425,11 @@ li {
   flex-direction: column;
   z-index: 1;
   background-color: var(--primary-bg-color);
+  cursor: pointer;
+}
+
+.dropdown .selected {
+  background-color: rgb(212, 212, 244);
 }
 
 footer {
