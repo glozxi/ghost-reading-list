@@ -1,8 +1,7 @@
 import { TagSearch } from "./tagSearch.js";
 import { Tag } from "./tag.js";
+import { Table } from "./table.js";
 import data from "./data.js";
-
-const tagSearch = new TagSearch();
 
 const table = new DataTable("#example", {
   data: data,
@@ -31,36 +30,10 @@ const table = new DataTable("#example", {
   paging: false,
 });
 
-function getDataFilteredByTags() {
-  if (tagSearch.length === 0) {
-    return;
-  }
-  const filteredData = data.filter((row) => {
-    return tagSearch.searchedTags.every((t) => row.tags.includes(t));
-  });
-  return filteredData;
-}
-
-function reloadData(table, data) {
-  table.clear();
-  table.rows.add(data).draw();
-}
-
 table.ready(() => {
-  const tagSearchForm = document.getElementById("tag-search-form");
-  tagSearchForm.addEventListener("submit", (e) => {
-    const value = document.getElementById("tag-search-input").value;
-    tagSearch.handleSubmit(e, value);
-    tagSearchForm.reset();
-    reloadData(table, getDataFilteredByTags());
-  });
-  tagSearchForm.addEventListener("keyup", (e) => {
-    if (e.key === "Backspace") {
-      tagSearch.handleRemoveLast();
-      reloadData(table, getDataFilteredByTags());
-    }
-  });
-
+  const tableObj = new Table(table);
+  const tagSearch = new TagSearch(tableObj);
+  tagSearch.onStart();
   // Set dark-mode/light-mode
   let prefers = window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"

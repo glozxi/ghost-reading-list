@@ -4,8 +4,10 @@ import data from "./data.js";
 class TagSearch {
   searchedTags = [];
   allTags;
+  table;
 
-  constructor() {
+  constructor(table) {
+    this.table = table;
     const allTags = new Set();
     function getUniqueTags() {
       data.forEach((item) => {
@@ -40,7 +42,10 @@ class TagSearch {
       li.appendChild(deleteButton);
       deleteButton.type = "button";
       deleteButton.appendChild(document.createTextNode("x"));
-      deleteButton.onclick = (e) => this.handleDelete(e, value);
+      deleteButton.onclick = (e) => {
+        this.handleDelete(e, value);
+        this.table.reloadData(this.getDataFilteredByTags());
+      };
       tagList.prepend(li);
     });
   }
@@ -63,6 +68,32 @@ class TagSearch {
   handleRemoveLast() {
     this.searchedTags.pop();
     this.refreshDisplayedSearchedTags();
+  }
+
+  getDataFilteredByTags() {
+    if (this.searchedTags.length === 0) {
+      return data;
+    }
+    const filteredData = data.filter((row) => {
+      return this.searchedTags.every((t) => row.tags.includes(t));
+    });
+    return filteredData;
+  }
+
+  onStart() {
+    const tagSearchForm = document.getElementById("tag-search-form");
+    tagSearchForm.addEventListener("submit", (e) => {
+      const value = document.getElementById("tag-search-input").value;
+      this.handleSubmit(e, value);
+      tagSearchForm.reset();
+      this.table.reloadData(this.getDataFilteredByTags());
+    });
+    tagSearchForm.addEventListener("keyup", (e) => {
+      if (e.key === "Backspace") {
+        this.handleRemoveLast();
+        this.table.reloadData(this.getDataFilteredByTags());
+      }
+    });
   }
 }
 
