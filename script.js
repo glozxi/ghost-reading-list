@@ -37,8 +37,7 @@ const table = new DataTable("#example", {
 
 table.ready(() => {
   const tableObj = new Table(table);
-  const tagSearch = new TagSearch(tableObj);
-  tagSearch.onStart();
+  new TagSearch(tableObj);
   // Set dark-mode/light-mode
   let prefers = window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
