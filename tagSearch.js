@@ -45,12 +45,12 @@ class TagSearch {
       (value) => {
         this.removeFromSearchedTag(value);
         this.refreshDisplayedSearchedTags();
-        this.table.reloadData(this.getDataFilteredByTags());
+        this.table.reloadData();
       },
     );
     this.selectedSuggestion = null;
     this.handleSuggestedChange();
-    this.table.reloadData(this.getDataFilteredByTags());
+    this.table.reloadData();
   }
 
   handleSubmit(value) {
@@ -69,7 +69,7 @@ class TagSearch {
     this.refreshDisplayedSearchedTags();
   }
 
-  getDataFilteredByTags() {
+  getDataFilteredByTags = (data) => {
     if (this.searchedTags.length === 0) {
       return data;
     }
@@ -77,7 +77,7 @@ class TagSearch {
       return this.searchedTags.every((t) => row.tags.includes(t));
     });
     return filteredData;
-  }
+  };
 
   #getIndexOfSelectedSuggestion() {
     if (this.selectedSuggestion === null) {

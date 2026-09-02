@@ -43,8 +43,9 @@ const table = new DataTable("#example", {
 
 table.ready(() => {
   const tableObj = new Table(table);
-  new TagSearch(tableObj);
-  new Slider(tableObj);
+
+  tableObj.addFilter(new TagSearch(tableObj).getDataFilteredByTags);
+  tableObj.addFilter(new Slider(tableObj).filterData);
 
   // Set dark-mode/light-mode
   let prefers = window.matchMedia("(prefers-color-scheme: dark)").matches

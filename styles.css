@@ -355,10 +355,14 @@ template {
 }
 
 body {
-  padding: 1em;
+  font-size: 16px;
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body > *:not(#example_wrapper) {
+  margin: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -389,6 +393,7 @@ search {
   flex-direction: column;
   max-width: 300px;
   gap: 0.8em;
+  margin: 1em;
 }
 
 input {
@@ -456,8 +461,12 @@ li {
   display: flex;
   flex-direction: column;
   z-index: 2;
-  background-color: var(--dt-input_background);
+  background-color: #ffffff;
   cursor: pointer;
+}
+
+.dropdown > li {
+  padding: 0.3em 0.5em;
 }
 
 .dropdown .selected {
@@ -475,5 +484,5 @@ footer {
 }
 
 #rating-search-slider {
-  margin-top: 10px;
+  margin: 10px 1em;
 }
