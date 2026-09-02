@@ -88,7 +88,6 @@ class TagSearch {
 
   #addListeners() {
     this.tagSearchUi.addSubmitListener((e) => {
-      console.log(this.selectedSuggestion);
       this.handleSubmit(this.selectedSuggestion);
     });
     this.tagSearchUi.addDropdownListeners(

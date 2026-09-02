@@ -2,12 +2,18 @@ import { TagSearch } from "./tagSearch.js";
 import { Tag } from "./tag.js";
 import { Table } from "./table.js";
 import data from "./data.js";
+import { Slider } from "./slider.js";
 
 const table = new DataTable("#example", {
   data: data,
   columns: [
     { data: "title" },
-    { data: "recommended" },
+    {
+      data: "recommended",
+      render: (data) => {
+        return "⭐".repeat(data);
+      },
+    },
     { data: "comments" },
     {
       data: "tags",
@@ -38,6 +44,8 @@ const table = new DataTable("#example", {
 table.ready(() => {
   const tableObj = new Table(table);
   new TagSearch(tableObj);
+  new Slider(tableObj);
+
   // Set dark-mode/light-mode
   let prefers = window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"

@@ -384,6 +384,10 @@ table.dataTable > tbody > tr > td {
   padding: 0 1em;
 }
 
+search {
+  max-width: 300px;
+}
+
 input {
   border: var(--dt-input_border);
   border-radius: var(--dt-input_border-radius);
@@ -423,7 +427,7 @@ li {
   position: absolute;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  z-index: 2;
   background-color: var(--primary-bg-color);
   cursor: pointer;
 }
