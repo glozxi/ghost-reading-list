@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280" height="280" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 170">
+  <circle
+    cx="85"
+    cy="85"
+    r="70"
+    fill="white"
+    stroke="gray"
+    stroke-width="5"
+  />
+  <circle
+    cx="45"
+    cy="90"
+    r="10"
+    fill="white"
+    stroke="red"
+    stroke-width="5"
+  />
+  <circle
+    cx="125"
+    cy="90"
+    r="10"
+    fill="white"
+    stroke="red"
+    stroke-width="5"
+  />
+  <circle
+    cx="140"
+    cy="140"
+    r="30"
+    fill="grey"
+    stroke-width="0"
+  />
+  <circle
+    cx="30"
+    cy="140"
+    r="30"
+    fill="grey"
+    stroke-width="0"
+  />
+</svg>
