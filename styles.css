@@ -385,7 +385,10 @@ table.dataTable > tbody > tr > td {
 }
 
 search {
+  display: flex;
+  flex-direction: column;
   max-width: 300px;
+  gap: 0.8em;
 }
 
 input {
@@ -405,22 +408,47 @@ input {
 
 li {
   list-style-type: none;
-  display: inline;
+  display: block;
 }
 
 .tag-search-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.2em;
+  align-items: stretch;
+  border: var(--dt-input_border);
+  border-radius: var(--dt-input_border-radius);
+  padding: var(--dt-input_padding);
+  background-color: var(--dt-input_background);
+  color: var(--dt-input_color);
+  margin-left: 3px;
+}
+
+.tag-search-list li:not(.tag) {
+  flex: 1 1 10em;
+}
+
+.tag-search-list input {
+  border: none;
+  width: 100%;
+  margin-left: 0;
 }
 
 .tag {
-  background-color: aquamarine;
   text-decoration: none;
   border-radius: 15px;
-  background-color: #73ad21;
+  background-color: #bedd92;
   padding: 0.4em;
   white-space: nowrap;
+  display: flex;
+  gap: 0.3em;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tag {
+    color: #000000;
+  }
 }
 
 .dropdown {
@@ -428,7 +456,7 @@ li {
   display: flex;
   flex-direction: column;
   z-index: 2;
-  background-color: var(--primary-bg-color);
+  background-color: var(--dt-input_background);
   cursor: pointer;
 }
 
@@ -436,6 +464,16 @@ li {
   background-color: rgb(212, 212, 244);
 }
 
+@media (prefers-color-scheme: dark) {
+  .dropdown .selected {
+    background-color: rgb(100, 100, 255);
+  }
+}
+
 footer {
   font-size: 0.8em;
+}
+
+#rating-search-slider {
+  margin-top: 10px;
 }

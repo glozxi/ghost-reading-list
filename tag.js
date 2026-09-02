@@ -4,7 +4,9 @@ class Tag {
   }
   createTagLi() {
     const li = document.createElement("li");
-    li.appendChild(document.createTextNode(this.value));
+    const span = document.createElement("span");
+    span.appendChild(document.createTextNode(this.value));
+    li.appendChild(span);
     li.classList.add("tag");
     return li;
   }
