@@ -384,8 +384,9 @@ ul {
 }
 
 table.dataTable > tbody > tr > th,
-table.dataTable > tbody > tr > td {
-  padding: 0 1em;
+table.dataTable > tbody > tr > td,
+#example_info {
+  padding: 0.6em 1em;
 }
 
 search {
