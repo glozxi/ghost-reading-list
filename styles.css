@@ -365,6 +365,10 @@ body > *:not(#example_wrapper) {
   margin: 1rem;
 }
 
+#example_wrapper {
+  margin: 3rem 0;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #000000;
@@ -394,7 +398,6 @@ search {
   flex-direction: column;
   max-width: 300px;
   gap: 0.8em;
-  margin: 1em;
 }
 
 input {
@@ -475,9 +478,24 @@ li {
 }
 
 @media (prefers-color-scheme: dark) {
-  .dropdown .selected {
+  .dropdown > li:not(.selected) {
+    color: #000000;
+  }
+  .dropdown > .selected {
     background-color: rgb(100, 100, 255);
   }
+}
+
+.noUi-pips {
+  color: inherit;
+}
+
+.noUi-value-horizontal {
+  transform: translate(-50%, 20%);
+}
+
+.noUi-marker-horizontal.noUi-marker-large {
+  height: 2px;
 }
 
 footer {
